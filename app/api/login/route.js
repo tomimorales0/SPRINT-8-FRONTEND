@@ -8,7 +8,6 @@ export async function POST(req) {
       { email: 'usuario3@example.com', password: 'secretpass' },
     ];
   
-    // Verificar si las credenciales coinciden con algún usuario válido
     const user = validUsers.find(
       (user) => user.email === email && user.password === password
     );
@@ -18,11 +17,11 @@ export async function POST(req) {
         status: 200,
       });
       
-      // Aquí establecemos la cookie con un token ficticio (puedes generar un JWT o similar)
+      
       response.cookies.set('auth-token', 'mi-token-secreto', {
-        httpOnly: true, // Solo accesible por el servidor
-        secure: process.env.NODE_ENV === 'production', // Solo en https
-        path: '/', // Disponible en todo el sitio
+        httpOnly: true, 
+        secure: process.env.NODE_ENV === 'production', 
+        path: '/', 
         maxAge: 60 * 60 * 24, // Expira en 1 día
       });
   

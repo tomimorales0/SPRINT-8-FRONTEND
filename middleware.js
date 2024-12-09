@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(req) {
-  const token = req.cookies.get('auth-token'); // Suponiendo que almacenas el token de sesión en cookies
+  const token = req.cookies.get('auth-token'); 
 
   // Rutas protegidas
   const protectedRoutes = ['/cuenta', '/facturas', '/transferencias/cuentas'];
