@@ -1,4 +1,4 @@
-import obtenerDatosFormulario from "../transferencias/formtranferencia"
+import obtenerDatosFormulario from "../transferencias/[cuentas]/formtranferencia"
 
 export async function generateMetadata() {
   return {

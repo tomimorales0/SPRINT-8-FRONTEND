@@ -1,4 +1,4 @@
-"use client"
+
 import { useState, useEffect } from "react";
 
 export default function Clientes() {
@@ -8,7 +8,9 @@ export default function Clientes() {
   useEffect(() => {
     async function fetchClientes() {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/clientes/");
+        const response = await fetch("http://127.0.0.1:8000/api/clientes",
+        
+        );
         if (!response.ok) {
           throw new Error("Error al obtener los clientes");
         }
