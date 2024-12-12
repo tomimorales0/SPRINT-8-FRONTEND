@@ -15,13 +15,13 @@ export default function Cuenta() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <h1 className="text-2xl font-semibold text-emerald-600 mb-4">Cuentas del Cliente</h1>
+    <div className="min-h-screen rounded-lg bg-gray-50 p-6">
+      <h1 className="text-4xl font-bold rounded-lg mb-4">Cuentas</h1>
 
       {cuentas.length > 0 ? (
         <CuentasList cuentas={cuentas} />
       ) : (
-        <p className="text-gray-500">Cargando cuentas del cliente...</p>
+        <p className="text-gray-500 text-center pt-10 text-2xl">Cargando cuentas del cliente...</p>
       )}
     </div>
   );

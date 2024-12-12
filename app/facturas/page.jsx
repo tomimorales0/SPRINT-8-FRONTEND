@@ -22,17 +22,17 @@ export default function Facturaciones() {
   const totalAPagar = facturas.reduce((total, factura) => total + factura.monto, 0);
 
   return (
-    <div>
+    <div className='min-h-screen rounded-lg bg-gray-50 p-6'>
     <h1 className="text-4xl mb-5 font-bold py-2">Facturaciones</h1>
-    <div className="bg-gray-400 px-10 py- rounded-lg text-white mx-auto ">
+    <div className=" px-10  rounded-lg text-white mx-auto ">
       <div className="py-5">
         <h2 className="text-xl font-semibold mb-2 text-black">Facturaciones pendientes</h2>
         <p className="text-black">Gestiona y paga tus facturas desde aquí</p>
       </div>
-      <div>
+      <div className='pt-10'>
         <div>
           <div>
-            <div className="flex text-xl space-x-64 text-white text-bold">
+            <div className="flex text-xl space-x-48 text-black text-bold">
               <p>Empresa</p><p>Monto</p>
               <p>Fecha de Vencimiento</p>
           
@@ -40,11 +40,11 @@ export default function Facturaciones() {
           </div>
           <div>
             {facturas.map((factura) => (
-              <ul key={factura.id} className="flex bg-gray-600 p-5 rounded-lg justify-between">
+              <ul key={factura.id} className="flex ring-green-200 text-black p-5 rounded-lg justify-between">
                 <li className="py-5"><div>{factura.empresa}</div></li>
                 <li className="py-5"><div>${factura.monto.toFixed(2)}</div></li>
                 <li className="py-5"><div>{factura.fechaVencimiento}</div></li>
-                <li className="flex center-item py-5"><button onClick={() => pagarFactura(factura)} className="bg-green-500 p-2">Pagar</button></li>
+                <li className="flex center-item py-5"><button onClick={() => pagarFactura(factura)} className="bg-green-500 rounded-lg text-white p-2">Pagar</button></li>
               </ul>
             ))}
           </div>
@@ -52,15 +52,15 @@ export default function Facturaciones() {
       </div>
       <div className="flex justify-between py-10">
         <div className="flex">
-          <span className="text-lg p-2 border-2 font-semibold">Total a Pagar: ${totalAPagar.toFixed(2)}</span>
+          <span className="text-lg text-black p-2 border-2 font-bold">Total a Pagar: ${totalAPagar.toFixed(2)}</span>
         </div>
         <button className="bg-green-500 rounded-lg p-2"onClick={() => totalAPagar(facturas)}> 
          Pagar Todo
         </button>
       
       </div>
-          <section className="bg-gray-400 ">
-            <div className="flex flex-col bg-gray-400">
+          <section>
+            <div className="flex flex-col">
               <div className="">
                 <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-xl text-black">
                     Pedir prestamo
