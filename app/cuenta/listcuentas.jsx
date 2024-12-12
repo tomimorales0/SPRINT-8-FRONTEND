@@ -1,27 +1,25 @@
 'use client';
 
-export default function CuentasList({ cuentas }) {
+export default function ClienteInfo({ cliente }) {
   return (
     <div className="grid gap-4">
-      {cuentas.map((cuenta) => (
-        <div
-          key={cuenta.id}
-          className="p-4 bg-white shadow-md rounded-lg border border-gray-200"
-        >
-          <p className="text-lg text-gray-800">
-            <span className="font-medium">Tipo de cuenta:</span> {cuenta.tipo}
-          </p>
-          <p className="text-lg text-gray-800">
-            <span className="font-medium">Número de cuenta:</span> {cuenta.numero}
-          </p>
-          <p className="text-lg text-gray-800">
-            <span className="font-medium">Saldo:</span> ${cuenta.saldo}
-          </p>
-          <p className="text-lg text-gray-800">
-            <span className="font-medium">Cliente:</span> {cuenta.cliente}
-          </p>
-        </div>
-      ))}
+      <div className="p-4 bg-white shadow-md rounded-lg border border-gray-200">
+        <p className="text-lg text-gray-800">
+          <span className="font-medium">Nombre:</span> {cliente.nombre}
+        </p>
+        <p className="text-lg text-gray-800">
+          <span className="font-medium">Apellido:</span> {cliente.apellido}
+        </p>
+        <p className="text-lg text-gray-800">
+          <span className="font-medium">DNI:</span> {cliente.DNI}
+        </p>
+        <p className="text-lg text-gray-800">
+          <span className="font-medium">Tipo de cliente:</span> {cliente.tipo}
+        </p>
+        <p className="text-lg text-gray-800">
+          <span className="font-medium">Sucursal:</span> {cliente.sucursal}
+        </p>
+      </div>
     </div>
   );
 }
