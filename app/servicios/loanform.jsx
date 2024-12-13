@@ -27,7 +27,7 @@ export default function LoanForm() {
     }
 
     // Generar la fecha actual
-    const currentDate = new Date().toISOString().split("T")[0]; // Solo la fecha
+    const currentDate = new Date().toISOString().split("T")[0]; 
 
     try {
       const storedData = JSON.parse(localStorage.getItem("auth_credentials"));
@@ -37,8 +37,8 @@ export default function LoanForm() {
       const loanData = {
         cliente: clientId, // ID del cliente ingresado manualmente
         tipo_prestamo: formData.loanType, // Tipo de préstamo
-        fecha_inicio: currentDate, // Fecha actual
-        monto: parseFloat(formData.amount), // Convertir el monto a número flotante
+        fecha_inicio: currentDate, 
+        monto: parseFloat(formData.amount), 
       };
 
       const response = await fetch("http://127.0.0.1:8000/api/prestamos/", {
@@ -57,7 +57,7 @@ export default function LoanForm() {
       const data = await response.json();
       console.log("Solicitud exitosa:", data);
 
-      // Mostrar SweetAlert en caso de éxito
+      
       Swal.fire({
         icon: 'success',
         title: 'Préstamo solicitado con éxito',
