@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from "react";
 
 export default function TransferenciaForm({ onTransferenciaVisual }) {
@@ -17,6 +18,7 @@ export default function TransferenciaForm({ onTransferenciaVisual }) {
       monto: formData.monto,
       fecha: new Date().toLocaleDateString(),
       descripcion: formData.descripcion,
+      hacia: formData.destinatario,
     };
     onTransferenciaVisual(nuevaTransferencia);
     setFormData({ destinatario: "", monto: "", descripcion: "" });

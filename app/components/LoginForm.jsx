@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie'; // Asegúrate de instalar la librería: npm install js-cookie
+import Cookies from 'js-cookie'; 
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -76,7 +76,7 @@ const LoginForm = () => {
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
 
-      <button type="submit" className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+      <button type="submit" className="bg-green-600 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
         Iniciar Sesión
       </button>
     </form>
