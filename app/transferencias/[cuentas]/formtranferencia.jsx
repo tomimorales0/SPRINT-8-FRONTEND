@@ -1,7 +1,7 @@
 "use server"
-export async function fetchMovimientos(clienteId) {
+export async function fetchMovimientos(cuentaId) {
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/movimientos-por-cuenta?clienteId=${clienteId}`);
+    const response = await fetch(`http://127.0.0.1:8000/api/movimientos-por-cuenta?cuentaId=${cuentaId}`);
     if (!response.ok) {
       throw new Error("Error al obtener los movimientos");
     }
