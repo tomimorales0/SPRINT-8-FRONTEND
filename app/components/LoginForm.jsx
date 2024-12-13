@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie'; 
+import Cookies from 'js-cookie';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -20,25 +20,35 @@ const LoginForm = () => {
     };
 
     try {
+      // Verificación de login con Basic Auth
       const response = await fetch('http://127.0.0.1:8000/api/verify-login/', {
         method: 'POST',
         headers: headers,
       });
 
       if (response.ok) {
-        // Guardar las credenciales en localStorage como un solo objeto JSON
+        // Guardar las credenciales en localStorage
         const credentialsObject = { username, password };
         localStorage.setItem('auth_credentials', JSON.stringify(credentialsObject));
 
-        // Obtener el token del servidor (puedes personalizar esto según tu backend)
-        const data = await response.json();
-        const token = data.token;
+        // Obtener el token desde la API de generación
+        const tokenResponse = await fetch('http://127.0.0.1:8000/api/token/', {
+          method: 'POST',
+          headers: headers,
+        });
 
-        // Guardar el token en cookies para que el middleware pueda usarlo
-        //Cookies.set('auth-token', token, { path: '/', secure: true, sameSite: 'strict' });
+        if (tokenResponse.ok) {
+          const tokenData = await tokenResponse.json();
+          const token = tokenData.token;
 
-        // Redirigir al usuario
-        router.push('/'); // Redirige a la página principal
+          // Guardar el token en cookies
+          Cookies.set('auth-token', token, { path: '/', secure: true, sameSite: 'strict' });
+
+          // Redirigir al usuario
+          router.push('/'); // Redirige a la página principal
+        } else {
+          setError('Error al generar el token. Por favor, inténtalo de nuevo.');
+        }
       } else {
         const data = await response.json();
         setError(data.detail || 'Credenciales inválidas. Por favor, inténtalo de nuevo.');

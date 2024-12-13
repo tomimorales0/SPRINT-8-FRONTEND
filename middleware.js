@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(req) {
-  const token = req.cookies.get('auth-token'); 
+  const token = req.cookies.get('auth-token');
 
   // Rutas protegidas
-  const protectedRoutes = ['/cuenta', '/facturas', '/transferencias/cuentas'];
+  const protectedRoutes = ['/cuenta', '/servicios', '/transferencias/cuentas'];
 
   // Si no está autenticado y accede a rutas protegidas, redirige a login
   if (protectedRoutes.includes(req.nextUrl.pathname) && !token) {
