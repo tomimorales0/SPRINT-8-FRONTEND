@@ -9,9 +9,10 @@ export default function Facturaciones() {
 
   return (
     <div className='min-h-screen rounded-lg bg-gray-50 p-6'>
-       
+       <div className="space-y-10">
       <Simulacion/>
-      <LoanForm/>
       <CurrencyConverter/>
+      <LoanForm/>
+      </div>
     </div>
   )};

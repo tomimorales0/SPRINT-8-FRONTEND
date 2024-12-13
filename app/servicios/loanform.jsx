@@ -20,7 +20,7 @@ export default function LoanForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
+    <div className="flex justify-center items-center  bg-gray-50">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full"
@@ -85,7 +85,7 @@ export default function LoanForm() {
 
         <button
           type="submit"
-          className="w-full bg-emerald-500 text-white py-2 px-4 rounded-lg hover:bg-emerald-600 transition"
+          className="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition"
         >
           Enviar Solicitud
         </button>

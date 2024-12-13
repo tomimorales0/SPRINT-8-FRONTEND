@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
+    "axios": "^1.7.9",
     "js-cookie": "^3.0.5",
     "next": "^14.2.20",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sweetalert2": "^11.14.5"
   },
   "devDependencies": {
     "eslint": "^9.16.0",

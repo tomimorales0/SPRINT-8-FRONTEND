@@ -15,9 +15,9 @@ export default function Simulacion() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className=" bg-gray-50 flex items-center justify-center">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-2xl font-bold text-gray-700 mb-6">Simulador de Plazo Fijo</h1>
+        <h1 className="text-2xl font-bold text-gray-700 mb-4">Simulador de Plazo Fijo</h1>
         <div className="mb-4">
           <label className="block text-gray-700 mb-2">Capital inicial (en pesos)</label>
           <input
