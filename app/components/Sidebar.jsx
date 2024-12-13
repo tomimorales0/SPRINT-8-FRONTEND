@@ -8,7 +8,7 @@ import { HomeIcon, CreditCardIcon, BanknotesIcon, ArrowsRightLeftIcon, Bars3Icon
 const navItems = [
   { icon: HomeIcon, label: 'Inicio', href: '/' },
   { icon: CreditCardIcon, label: 'Cuenta', href: '/cuenta' },
-  { icon: BanknotesIcon, label: 'Facturación', href: '/facturas' },
+  { icon: BanknotesIcon, label: 'Servicios', href: '/servicios' },
   { icon: ArrowsRightLeftIcon, label: 'Transferencias', href: '/transferencias/cuentas' },
 ];
 
