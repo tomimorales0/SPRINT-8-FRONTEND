@@ -27,7 +27,7 @@ export default function Movimientos() {
       <div className="mb-6">
         <TransferenciaForm onTransferenciaVisual={handleTransferenciaVisual} />
       </div>
-
+      <h1 className="text-4xl font-bold rounded-lg mb-4">Ultimos movimientos</h1>
       <MovimientosList movimientos={movimientos} />
     </div>
   );
