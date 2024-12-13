@@ -19,7 +19,7 @@ export async function fetchCuentas() {
       };
 
       // Hacemos la solicitud GET al endpoint
-      const response = await fetch("http://127.0.0.1:8000/api/cliente/saldo/", {
+      const response = await fetch("http://127.0.0.1:8000/api/cliente/datos/", {
         method: 'GET',
         headers: headers,
       });
